@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: #0a0a0c;
+    color: #e8e8f0;
+    font-family: 'Syne', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar       { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: #111115; }
+  ::-webkit-scrollbar-thumb { background: #2a2a35; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #3d3d4d; }
+}
+
+@layer components {
+  /* Staggered animation helpers */
+  .stagger-1  { animation-delay: 0.05s; opacity: 0; }
+  .stagger-2  { animation-delay: 0.10s; opacity: 0; }
+  .stagger-3  { animation-delay: 0.15s; opacity: 0; }
+  .stagger-4  { animation-delay: 0.20s; opacity: 0; }
+  .stagger-5  { animation-delay: 0.25s; opacity: 0; }
+
+  /* Skeleton shimmer */
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      #18181f 25%,
+      #2a2a35 50%,
+      #18181f 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
+
+  /* Data value mono display */
+  .data-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+}
