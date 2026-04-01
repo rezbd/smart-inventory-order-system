@@ -3,9 +3,20 @@
 @tailwind utilities;
 
 @layer base {
-  *, *::before, *::after { box-sizing: border-box; }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-  html { scroll-behavior: smooth; }
+  html,
+  body,
+  #root {
+    height: 100%;
+    width: 100%;
+  }
 
   body {
     background-color: #0a0a0c;
@@ -13,6 +24,13 @@
     font-family: 'Syne', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Prevent the body itself from ever scrolling — inner panels scroll */
+    overflow: hidden;
+  }
+
+  #root {
+    display: flex;
+    flex-direction: column;
   }
 
   /* Custom scrollbar */
@@ -24,11 +42,11 @@
 
 @layer components {
   /* Staggered animation helpers */
-  .stagger-1  { animation-delay: 0.05s; opacity: 0; }
-  .stagger-2  { animation-delay: 0.10s; opacity: 0; }
-  .stagger-3  { animation-delay: 0.15s; opacity: 0; }
-  .stagger-4  { animation-delay: 0.20s; opacity: 0; }
-  .stagger-5  { animation-delay: 0.25s; opacity: 0; }
+  .stagger-1 { animation-delay: 0.05s; opacity: 0; }
+  .stagger-2 { animation-delay: 0.10s; opacity: 0; }
+  .stagger-3 { animation-delay: 0.15s; opacity: 0; }
+  .stagger-4 { animation-delay: 0.20s; opacity: 0; }
+  .stagger-5 { animation-delay: 0.25s; opacity: 0; }
 
   /* Skeleton shimmer */
   .skeleton {
@@ -42,7 +60,7 @@
     animation: shimmer 1.5s ease-in-out infinite;
   }
 
-  /* Data value mono display */
+  /* Mono data display */
   .data-value {
     font-family: 'JetBrains Mono', monospace;
     font-weight: 400;

@@ -4,18 +4,43 @@ import Topbar  from './Topbar';
 
 export default function AppLayout() {
   return (
-    <div className="flex h-screen bg-void overflow-hidden">
+    <div
+      style={{ height: '100vh', width: '100vw', display: 'flex', overflow: 'hidden' }}
+      className="bg-void"
+    >
+      {/* ── Sidebar ─────────────────────────────────────────── */}
       <Sidebar />
-      <div className="flex-1 flex flex-col overflow-hidden">
+
+      {/* ── Right column ────────────────────────────────────── */}
+      <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+
+        {/* Topbar — fixed height, never scrolls */}
         <Topbar />
-        <main className="flex-1 overflow-y-auto p-6">
+
+        {/* Main content — this is the ONLY thing that scrolls */}
+        <main
+          style={{ flex: 1, overflowY: 'auto', overflowX: 'hidden' }}
+          className="p-6"
+        >
           <Outlet />
         </main>
+
+        {/* Toast container — pinned to bottom-right of the right column */}
+        <div
+          id="toast-container"
+          style={{
+            position: 'fixed',
+            bottom: '1.5rem',
+            right:  '1.5rem',
+            zIndex: 100,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.5rem',
+            width: '20rem',
+            pointerEvents: 'none',
+          }}
+        />
       </div>
-      <div
-        id="toast-container"
-        className="fixed bottom-6 right-6 z-[100] flex flex-col gap-2 w-80 pointer-events-none"
-      />
     </div>
   );
 }

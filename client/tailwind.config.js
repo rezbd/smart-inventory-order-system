@@ -1,30 +1,29 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,jsx}'],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
     extend: {
       fontFamily: {
         display: ['Syne', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        mono:    ['JetBrains Mono', 'monospace'],
       },
       colors: {
-        // Core palette
         void:    '#0a0a0c',
         surface: '#111115',
         panel:   '#18181f',
         border:  '#2a2a35',
         muted:   '#3d3d4d',
-        // Text
         dim:     '#6b6b80',
         soft:    '#a0a0b8',
         bright:  '#e8e8f0',
-        // Accent
         amber: {
           DEFAULT: '#f59e0b',
           dim:     '#92610a',
           glow:    '#fbbf24',
         },
-        // Status colors
         emerald: { DEFAULT: '#10b981', dim: '#065f46' },
         rose:    { DEFAULT: '#f43f5e', dim: '#881337' },
         sky:     { DEFAULT: '#38bdf8', dim: '#0c4a6e' },
@@ -42,12 +41,12 @@ export default {
       },
       keyframes: {
         fadeUp: {
-          from: { opacity: 0, transform: 'translateY(12px)' },
-          to:   { opacity: 1, transform: 'translateY(0)' },
+          from: { opacity: '0', transform: 'translateY(12px)' },
+          to:   { opacity: '1', transform: 'translateY(0)' },
         },
         pulseDot: {
-          '0%, 100%': { opacity: 1 },
-          '50%':      { opacity: 0.3 },
+          '0%, 100%': { opacity: '1' },
+          '50%':      { opacity: '0.3' },
         },
         shimmer: {
           '0%':   { backgroundPosition: '-200% 0' },
