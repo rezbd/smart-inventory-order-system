@@ -1,5 +1,10 @@
 # StockCommand — Smart Inventory & Order Management System
 
+[![Live Demo](https://img.shields.io/badge/demo-live-green?style=for-the-badge)](https://smart-inventory-order-system.vercel.app)
+
+> [!NOTE]
+> The backend is hosted on a free Render instance. If the app hasn't been visited recently, the first request (login) may take 30–40 seconds to "spin up."
+
 A production-grade full-stack application for managing product inventory,
 processing orders, tracking stock levels, and monitoring business operations
 in real time. Built with the MERN stack.
@@ -93,6 +98,14 @@ in real time. Built with the MERN stack.
 | Styling     | Tailwind CSS 3                                  |
 | Fonts       | Syne (display) + JetBrains Mono (data/code)     |
 | Security    | Helmet, CORS, express-rate-limit                |
+
+---
+
+## Deployment
+
+- **Frontend:** Hosted on **Vercel** (Continuous Deployment from GitHub)
+- **Backend:** Hosted on **Render** (Web Service)
+- **Database:** **MongoDB Atlas** (Cloud Cluster)
 
 ---
 
@@ -263,10 +276,11 @@ npm start
 
 ## Demo Access
 
-| Field    | Value                     |
-|----------|---------------------------|
-| Email    | `demo@stockcommand.io`    |
-| Password | `demo123456`              |
+| Field    | Value                                               |
+|----------|-----------------------------------------------------|
+| **URL** | [https://your-app-name.vercel.app](https://...)      |
+| Email    | `demo@stockcommand.io`                              |
+| Password | `demo123456`                                        |
 
 Click **"⚡ Demo Login — Instant Access"** on the login page to skip typing.
 
